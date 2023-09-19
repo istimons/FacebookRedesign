@@ -1,3 +1,12 @@
+""" 
+This is a Facebook redesign ceoncept using KivyMD.
+
+Fork it & try to see if adding some database between users from firebase can fire some Notifications, Good Luck!
+
+
+Developed by lord istimons
+"""
+
 import kivy
 
 from kivymd.app import MDApp
