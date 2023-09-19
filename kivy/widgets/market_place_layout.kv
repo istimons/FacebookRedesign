@@ -1,0 +1,23 @@
+<MarketPlaceLayout>:
+    orientation: "vertical"
+    size_hint_y: None
+    height: "140dp"
+    padding: "4dp"
+    # radius: [12, ]
+    elevation: 0.5
+    line_color: 'lightgray'
+    md_bg_color: 'lightgray'
+
+    FitImage:
+        source: root.image_to_post
+        allow_stretch: True
+        size_hint_y: None
+        # height: root.height - dp(110)
+
+    MDLabel:
+        text: root.price
+        markup: True
+        bold: True
+        halign: 'left'
+
+    

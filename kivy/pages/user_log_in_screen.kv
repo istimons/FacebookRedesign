@@ -1,0 +1,139 @@
+<IndividualLogInScreen>:
+    MDBoxLayout: 
+        orientation: "vertical"
+        md_bg_color: app.theme_cls.bg_normal   
+        size_hint: dp(1), dp(1)
+
+        MDTopAppBar: 
+            height: dp(50)
+            pos_hint: {"top": 1}
+            title: "Feedback"
+            text_size: self.size
+            font_size: '15sp'
+            markup: True
+            anchor_title: 'left'
+            # left_action_items: [['camera', lambda x: x],['account-search', lambda x: x], ['dots-vertical', lambda x: x]]            
+            margin: 0
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, None)
+            size: dp(1700), dp(35)
+            md_bg_color: 'lightgrey'
+
+            MDLabel:
+                text: "  Create your account"
+                theme_text_color: "Custom"
+                text_color: app.theme_cls.primary_color
+
+
+        ScrollView:
+            do_scroll_y: True
+            effect_cls: 'ScrollEffect'
+            bar_width: dp(2)
+            size_hint: dp(1), dp(1)
+            padding: dp(8),dp(8),dp(8),dp(8)
+            # spacing: dp(20)
+            pos_hint: {"center_x": .5, "center_y": .5}
+            # size: dp(400), dp(950)
+            # md_bg_color: 'red'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: dp(1)
+                adaptive_height: True
+                # md_bg_color: 'lightgrey'
+                spacing: dp(20)
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: dp(.5), (None)   
+                    size: dp(60), dp(100)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    #line_color: 'gray'    
+                    radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+
+                    MDTextField:
+                        hint_text: "Your public profile name"
+                        helper_text: "Your Name"
+                        helper_text_mode: "persistent"                        
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: dp(.5), (None)   
+                    size: dp(60), dp(100)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    #line_color: 'gray'    
+                    radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+
+                    MDTextField:
+                        hint_text: "Your public contact"
+                        helper_text: "Phone No"
+                        helper_text_mode: "persistent"                         
+
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: dp(.5), (None)   
+                    size: dp(60), dp(100)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    #line_color: 'gray'    
+                    radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+
+                    MDTextField:
+                        hint_text: "Your public email"
+                        helper_text: "Email "
+                        helper_text_mode: "persistent"      
+
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: dp(.5), (None)   
+                    size: dp(60), dp(100)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    #line_color: 'gray'    
+                    radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+
+                    MDTextField:
+                        hint_text: "Bio"
+                        helper_text: "About you"
+                        helper_text_mode: "persistent"      
+
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    size_hint: dp(.5), (None)   
+                    size: dp(60), dp(100)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    #line_color: 'gray'    
+                    radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+
+                    MDTextField:
+                        hint_text: "Porfolio"
+                        helper_text: "Website/ public page"
+                        helper_text_mode: "persistent"     
+
+
+                MDRoundFlatButton:
+                    text: 'Submit'
+                    md_bg_color: 'teal'
+                    theme_text_color: 'Custom'
+                    text_color: 'white'
+                    pos_hint: {"center_x": .5, "center_y": 0}
+                    size_hint: (0.5, 0.2)
+                    on_press:
+                        app.switch_screen('main_screen')   
+
+                MDSeparator:
+                    line_color: 'white'
+                    size_hint_y: dp(0.5)

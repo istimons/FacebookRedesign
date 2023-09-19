@@ -1,0 +1,23 @@
+<ChatScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        ScrollView:
+            do_scroll_y: True
+            effect_cls: 'ScrollEffect'
+            bar_width: 0
+            MDBoxLayout:
+                adaptive_height: True
+                orientation: 'vertical'
+                md_bg_color: app.theme_cls.primary_color
+                spacing: 20
+                                                        
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    md_bg_color: app.theme_cls.bg_normal
+                    size_hint_y: None
+                    adaptive_height: True
+                    padding: [0, 0, 0, 40]
+                    MDList: #2 add a chatlist to show users in a scrollview
+                        id: bloglist
+                        spacing: 10

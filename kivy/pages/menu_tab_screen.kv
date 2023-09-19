@@ -1,0 +1,339 @@
+<MenuTabScreen>:
+    MDBoxLayout: 
+        orientation: "vertical"
+        md_bg_color: app.theme_cls.bg_normal   
+        size_hint: dp(1), dp(1)
+
+        MDTopAppBar: 
+            height: dp(50)
+            title: "[color=#000000]Menu[/color]"
+            bold: True            
+            text_size: self.size
+            font_size: '15sp'
+            markup: True
+            anchor_title: 'left'
+            right_action_items: [['circular-saw', lambda x: x], ['search-web', lambda x: x]]    
+            margin: 0
+            md_bg_color: 'lightgrey'
+
+        ScrollView:
+            do_scroll_y: True
+            effect_cls: 'ScrollEffect'
+            bar_width: dp(2)
+            size_hint: dp(1), dp(1)
+            padding: dp(8),dp(8),dp(8),dp(8)
+            # spacing: dp(20)
+            pos_hint: {"center_x": .5, "center_y": .5}
+            # size: dp(400), dp(950)
+            # md_bg_color: 'red'    
+
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: dp(1)
+                adaptive_height: True
+                # md_bg_color: 'lightgrey'
+                spacing: dp(2)
+
+                MenuTopBarContent:
+
+                MDBoxLayout: # for holding center menu grid layout
+                    orientation: 'vertical'
+                    size_hint: dp(.95), (None)   
+                    size: dp(60), dp(520)             
+                    pos_hint: {"center_x": .5, "center_y": .8}           
+                    spacing: dp(2)
+                    # line_color: 'gray'    
+                    # radius: [dp(10), ]         
+                    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+                    
+                    MenuCenterCardsContent:
+                
+                MenuSeeMoreContentItems:
+
+
+<MenuTopBarContent@MDCard>:
+    orientation: 'vertical'
+    size_hint: (1, 1)
+    adaptive_height: True
+    ######################################################################    
+
+
+    MDBoxLayout:
+        size_hint_y: None
+        height: dp(60)
+        spacing: dp(5)
+        md_bg_color: 'lightgrey'      
+        padding: [0, 0, 10, 0]
+
+        MDLabel:
+            size_hint: (None, None)
+            pos_hint: {'center_y':.5}
+            size: 0.4, 30
+
+    ###########################Bridge####################################
+
+        Avatar:
+            source: 'assets/images/logo/logo2.png'
+            pos_hint: {"center_y": .5}
+            radius: [30, ]
+        MDBoxLayout:
+            # md_bg_color: 1, 0, 1, 1
+            orientation: "vertical"
+            padding: 0, 0, 0, "20dp"   # for text alignment (spacing)
+            spacing: dp(2)
+            # md_bg_color: 'red'
+            Label:
+                markup: True
+                text: 'John Doe'
+                theme_text_color: 'Custom'
+                size: self.texture_size
+                size_hint_y: None
+                size_hint_x: None
+                font_size: '15sp'
+                color: app.theme_cls.opposite_bg_normal
+                bold: True
+
+            MDLabel:
+                # id: 'company_info'
+                text: 'See your profile'
+                height: self.texture_size[1]
+                theme_text_color: 'Custom'
+                size_hint_y: None
+                # size_hint_x: None
+                bold: True
+                font_size: '12sp'
+                color: [.5, .5, .5, 1] 
+                shorten: True
+                markup: True
+                shorten_from: 'right'  
+                # if root.is_read != 'new' else app.theme_cls.primary_color        
+                # icon: 'earth'  
+
+    ###########################Bridge####################################
+
+
+        MDBoxLayout:
+            size_hint_x: dp(1)
+            # spacing: 3
+            # md_bg_color: 'red'
+            padding: 0, 0, 0, "26dp"   # for text alignment (spacing)     
+            
+
+            Widget:          
+
+
+            Avatar:
+                source: 'assets/images/logo/logo3.png'
+                pos_hint: {"center_y": .1, "center_x": .7}
+                radius: [30, ]
+
+    MDSeparator:
+        md_bg_color: 'grey'
+
+<MenuCenterCardsContent@MDGridLayout>:
+    cols: 2
+    spacing: "12dp"
+    padding: "12dp"
+    adaptive_height: True
+    # md_bg_color: app.theme_cls.primary_color
+    # size_hint: dp(1), dp(1)
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'timeline-clock'
+
+        MDLabel:
+            text: '    Feeds'
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'search-web'
+
+        MDLabel:
+            text: '    Find Friends'
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5 
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'group'
+
+        MDLabel:
+            text: '    Groups'
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'store'
+
+        MDLabel:
+            text: '    Marketplace'
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'video'
+
+        MDLabel:
+            text: '    Video'
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'history'
+
+        MDLabel:
+            text: '    Memories'
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'content-save'
+
+        MDLabel:
+            text: '    Saved'
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'flag'
+
+        MDLabel:
+            text: '    Pages'
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'movie'
+
+        MDLabel:
+            text: '    Reels'
+
+
+    MDCard:
+        orientation: "vertical"
+        size_hint_y: None
+        height: "86dp"
+        padding: "4dp"
+        radius: [12, ]
+        elevation: 0.5
+        line_color: 'lightgray'
+
+        MDIconButton:
+            icon: 'calendar'
+
+        MDLabel:
+            text: '    Events'
+
+
+<MenuSeeMoreContentItems@MDBoxLayout>:
+    orientation: 'vertical'
+    size_hint_y: None
+    adaptive_height: True
+    padding: [0, 0, 0, 40]          
+    
+    MDList:
+
+        MDSeparator:
+            md_bg_color: 'grey'      
+
+
+        TwoLineIconListItem:
+            text: "Help & support"
+            secondary_text: "Get help "
+            divider: None
+                                
+            IconLeftWidget:
+                icon: 'help'      
+
+        MDSeparator:
+            md_bg_color: 'grey'      
+
+
+        TwoLineIconListItem:
+            text: "Settings and privacy"
+            secondary_text: "Privacy and settings"
+            divider: None
+                                
+            IconLeftWidget:
+                icon: 'store'                
+
+
+    MDFlatButton:
+        text: 'Log out'
+        md_bg_color: 'teal'
+        theme_text_color: 'Custom'
+        text_color: 'white'
+        pos_hint: {"center_x": .5, "center_y": 0}
+        size_hint: (1, 0.2)     
+        on_press: app.switch_screen('log_in_screen')           

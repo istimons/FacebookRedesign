@@ -1,0 +1,137 @@
+<LogInScreen>:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, None
+        padding: dp(8),dp(8),dp(8),dp(8)
+        spacing: dp(8)
+        pos_hint: {"center_x": .5, "center_y": .9}
+        height: dp(65)
+        # md_bg_color: 'blue'
+        MDLabel:
+            text: 'Feeback'
+            markup: True
+            halign: 'center'
+            bold: 'True'
+            # font_name: 'fonts/materialdesignicons-webfont.ttf'
+
+    ScrollView:
+        do_scroll_y: True
+        effect_cls: 'ScrollEffect'
+        bar_width: dp(2)
+        size_hint: None, None
+        padding: dp(8),dp(8),dp(8),dp(8)
+        # spacing: dp(20)
+        pos_hint: {"center_x": .5, "center_y": .4}
+        size: dp(300), dp(350)
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 1
+            adaptive_height: True
+            # md_bg_color: 'lightgrey'
+            spacing: dp(20)
+
+            ChooseLogInUserType:
+            ChooseLogInUserType2:
+
+
+<ChooseLogInUserType@MDBoxLayout>:    
+    orientation: 'vertical'
+    size_hint: dp(.95), (None)   
+    size: dp(60), dp(200)             
+    pos_hint: {"center_x": .5, "center_y": .8}           
+    spacing: dp(2)
+    line_color: 'gray'    
+    radius: [dp(10), ]         
+    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+                                    
+    MDIconButton:
+        icon: 'account-group'  
+        pos_hint: {"center_x": .5, "center_y": .5}    
+        size_hint: (None), dp(0.2)                          
+    MDLabel:
+        halign: 'center'
+        valign: 'center'
+        text:'Sign in as an Organization'  
+        pos_hint: {"center_x": .5, "center_y": .5}    
+        font_size: dp(15)
+        size_hint: dp(1), dp(0.2)
+
+    MDLabel:
+        halign: 'center'
+        valign: 'center'
+        text: 'Reach customers on this platform, post products/ads to get human verified Feedback & Rating all together for free'
+        theme_text_color: "Custom"
+        text_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": .5, "center_y": .5}   
+        font_size: dp(12)
+        size_hint: dp(1), dp(0.2)
+
+    MDFloatLayout:
+        pos_hint: {"center_x": .45, "center_y": 5}
+        size_hint: dp(0.2), dp(0.2)                    
+        color: [1, 0, 30, 2]
+        # md_bg_color: app.theme_cls.primary_color
+                    
+        MDFlatButton:
+            text: 'Proceed'
+            md_bg_color: 'teal'
+            theme_text_color: 'Custom'
+            text_color: 'black'
+            pos_hint: {"center_x": .78, "center_y": 0}
+            size_hint: dp(1), dp(0.2)
+            size: dp(0.3), dp(0.9)
+            on_press: 
+                app.switch_screen('org_login_screen')
+
+
+<ChooseLogInUserType2@MDBoxLayout>:    
+    orientation: 'vertical'
+    size_hint: dp(.95), (None)   
+    size: dp(60), dp(200)             
+    pos_hint: {"center_x": .5, "center_y": .1}           
+    spacing: dp(2)
+    line_color: 'gray'    
+    radius: [dp(10), ]         
+    padding: 0, 0, 0, "26dp"   # for text alignment (spacing)
+                                    
+    MDIconButton:
+        icon: 'account'  
+        pos_hint: {"center_x": .5, "center_y": .5}    
+        size_hint: (None), dp(0.2)                          
+    MDLabel:
+        halign: 'center'
+        valign: 'center'
+        text:'Sign in as an Individual'  
+        pos_hint: {"center_x": .5, "center_y": .5}    
+        font_size: dp(15)
+        size_hint: dp(1), dp(0.2)
+
+    MDLabel:
+        halign: 'center'
+        valign: 'center'
+        text: 'Reach Organizations Insights on this platform to know more, get products & genuine Feedback '
+        theme_text_color: "Custom"
+        text_color: app.theme_cls.primary_color
+        pos_hint: {"center_x": .5, "center_y": .5}   
+        font_size: dp(12)
+        size_hint: dp(1), dp(0.2)
+
+    MDFloatLayout:
+        pos_hint: {"center_x": .45, "center_y": 5}
+        size_hint: dp(0.2), dp(0.2)                    
+        color: [1, 0, 30, 2]
+        # md_bg_color: app.theme_cls.primary_color
+                    
+        MDFlatButton:
+            text: 'Proceed'
+            md_bg_color: 'teal'
+            theme_text_color: 'Custom'
+            text_color: 'black'
+            pos_hint: {"center_x": .78, "center_y": 0}
+            size_hint: dp(1), dp(0.2)
+            size: dp(0.3), dp(0.9)
+            # color:  0, 52/255, 102/255, .63
+            on_press:
+                app.switch_screen('ind_log_in_screen')                 

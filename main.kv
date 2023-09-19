@@ -1,0 +1,363 @@
+<MainScreen>: #1 Create a screen to hold all the content
+    # size_hint_x: 1
+    MDBoxLayout: 
+        orientation: "vertical"
+        md_bg_color: app.theme_cls.bg_normal   
+        MDTopAppBar: 
+            id: logoToolBar
+            height: 50
+            title: "FeedBack"
+            text_size: self.size
+            font_size: '9sp'
+            markup: True
+            anchor_title: 'left'
+            right_action_items: [['plus', lambda x: x],['account-search', lambda x: x], ['message', lambda x: app.switch_screen('message_screen')]]            
+            margin: 0
+
+                       
+
+        MDTabs:
+            # size_hint: (None, None)
+            size: dp(.5), dp(.1)
+
+
+
+            # MDGridLayout:
+            #     cols: 5
+
+
+            HomeTab:
+                icon: 'home'
+                md_bg_color: 'lightgrey'
+
+                ScrollView:
+                    do_scroll_y: True
+                    effect_cls: 'ScrollEffect'
+                    bar_width: 0
+                    MDBoxLayout:
+                        adaptive_height: True
+                        orientation: 'vertical'
+                        # md_bg_color: app.theme_cls.primary_color
+                        spacing: 20
+                        MDBoxLayout:
+                            height: 150
+                            size_hint_y: None
+                            ScrollView:
+                                do_scroll_x: True
+                                do_scroll_y: False
+                                bar_width: 0
+                                MDBoxLayout: 
+                                    id: story_layout
+                                    orientation: 'horizontal'
+                                    adaptive_width: True
+                                    spacing: 10
+                                    padding: [10, 0, 0, 0]
+                                    StoryWithIcon:
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            md_bg_color: app.theme_cls.bg_normal
+                            size_hint_y: None
+                            adaptive_height: True
+                            # radius: [20, 20, 0, 0]
+                            # padding: [0, 0, 0, 40]
+                            MDList:
+                                id: company
+                                spacing: 5
+                                MDCard:
+                                    # id: company
+                                    # radius: 12, 46, 12, 46
+                                    size_hint: .5, .3
+                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                    # elevation: 20
+                                    # shadow_softness: 4
+                                    # shadow_offset: (2, -2)                                
+
+
+            FriendsTap:
+                icon: 'account-multiple'
+                md_bg_color: 'lightgrey'  
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    # md_bg_color: 'red'
+
+                    FriendWithIcon:
+
+                    ScrollView:
+                        do_scroll_y: True
+                        effect_cls: 'ScrollEffect'
+                        bar_width: 0
+                        MDBoxLayout:
+                            adaptive_height: True
+                            orientation: 'vertical'
+                            md_bg_color: app.theme_cls.primary_color           
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint: (None, None)
+                                size: (600, 40)
+                                spacing: 2
+                                MDLabel:
+                                    markup: True
+                                    text: "  Friend requests [color=#ff0000ff]420[/color]"  
+                                    # theme_text_color: "Custom"
+                                    # text_color: app.theme_cls.primary_color       
+
+                                # Widget:          
+
+
+                                MDLabel:
+                                    text: "  see all"
+                                    theme_text_color: "Custom"
+                                    text_color: 'blue'
+                                
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                md_bg_color: app.theme_cls.bg_normal
+                                size_hint_y: None
+                                adaptive_height: True
+                                MDList: #Friends list view panel
+                                    id: friends_layout
+                                    spacing: 5
+
+
+            VideoTab:
+                icon: 'video'
+                md_bg_color: 'lightgrey'  
+
+                ScrollView:
+                    do_scroll_y: True
+                    effect_cls: 'ScrollEffect'
+                    bar_width: 0
+                    MDBoxLayout:
+                        adaptive_height: True
+                        orientation: 'vertical'
+                        # md_bg_color: app.theme_cls.primary_color
+                        spacing: 20
+
+                        MDTopAppBar: 
+                            height: dp(90)
+                            title: "[color=#000000]Video[/color]"
+                            bold: True            
+                            # text_size: self.size
+                            font_size: '15sp'
+                            markup: True
+                            anchor_title: 'left'
+                            right_action_items: [['account', lambda x: x], ['search-web', lambda x: x]]   
+                            margin: 0
+                            md_bg_color: 'lightgrey'
+                            elevation: 0
+
+                            MDGridLayout:
+                                cols: 7
+                                pos_hint: {"center_x": dp(.46)}
+                                # rows: 5
+                                
+                                # MDWidget:
+
+                                MDRoundFlatButton:
+                                    text: 'For you'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.2)    
+
+                                MDRoundFlatButton:
+                                    text: 'Live'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.2)                                    
+
+                                MDRoundFlatButton:
+                                    text: 'Gaming'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.2)    
+                                    
+                                MDRoundFlatButton:
+                                    text: 'Reels'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.2)       
+
+                                MDRoundFlatButton:
+                                    text: 'Following'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.2)                                   
+
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            md_bg_color: app.theme_cls.bg_normal
+                            size_hint_y: None
+                            adaptive_height: True
+                            # radius: [20, 20, 0, 0]
+                            # padding: [0, 0, 0, 40]
+                            MDList:
+                                id: company_video
+                                spacing: 5
+                                MDCard:
+                                    # id: company
+                                    # radius: 12, 46, 12, 46
+                                    size_hint: .5, .3
+                                    pos_hint: {"center_x": .5, "center_y": .5}
+                                    # elevation: 20
+                                    # shadow_softness: 4
+                                    # shadow_offset: (2, -2)        
+
+
+              
+
+            MarketPlaceTab:
+                icon: 'store'
+                md_bg_color: 'lightgrey'            
+
+                ScrollView:
+                    do_scroll_y: True
+                    effect_cls: 'ScrollEffect'
+                    bar_width: 0
+                    MDBoxLayout:
+                        adaptive_height: True
+                        orientation: 'vertical'
+                        # md_bg_color: app.theme_cls.primary_color
+                        spacing: 20
+
+                        MDTopAppBar: 
+                            height: dp(90)
+                            title: "[color=#000000]Markeplace[/color]"
+                            bold: True            
+                            # text_size: self.size
+                            font_size: '15sp'
+                            markup: True
+                            anchor_title: 'left'
+                            right_action_items: [['account', lambda x: x], ['search-web', lambda x: x]]   
+                            margin: 0
+                            md_bg_color: 'lightgrey'
+                            elevation: 0
+
+                            MDGridLayout:
+                                cols: 2
+                                pos_hint: {"center_x": dp(.52)}
+                                # rows: 5
+                                
+                                # MDWidget:
+
+                                MDRoundFlatIconButton:
+                                    text: 'Sell'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.1) 
+                                    icon: 'book-check'   
+
+                                MDRoundFlatIconButton:
+                                    text: 'Cateories'
+                                    line_color: 'lightgray'
+                                    md_bg_color: 'gray'
+                                    text_color: 'black'
+                                    size_hint_x: dp(0.1)    
+                                    icon:'menu'                                
+
+
+                        MDSeparator:
+                            md_bg_color: 'gray'
+
+                        MDBoxLayout:
+                            orientation: 'horizontal'
+                            size_hint: (None, None)
+                            size: (600, 40)
+                            spacing: 2
+                            MDLabel:
+                                markup: True
+                                text: "  Todays Picks"  
+                                # theme_text_color: "Custom"
+                                # text_color: app.theme_cls.primary_color       
+
+                            # Widget:          
+
+
+                            MDLabel:
+                                text: "  Change"
+                                icon: 'location-enter'
+                                theme_text_color: "Custom"
+                                text_color: 'blue'
+
+                        MDGridLayout:
+                            id: company_market_place_sales
+                            cols: 2
+                            spacing: "12dp"
+                            # padding: "12dp"
+                            adaptive_height: True
+                            # md_bg_color: app.theme_cls.primary_color
+                            # size_hint: dp(1), dp(1)
+
+                        
+            NotificationTab:
+                # MDIcon:
+                icon: 'bell'
+                md_bg_color: 'lightgrey'  
+                badge_icon: 'numeric-10'
+                pos_hint: {"center_x": .5, "center_y": .5}
+                badge_icon_color: 0, 0, 1, 1
+                badge_font_size: "24sp"
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    # md_bg_color: 'red'
+
+                    # NotificationWithIcon:
+
+                    MDTopAppBar: 
+                        height: dp(50)
+                        title: "[color=#000000]Notifications[/color]"
+                        bold: True            
+                        text_size: self.size
+                        font_size: '15sp'
+                        markup: True
+                        anchor_title: 'left'
+                        right_action_items: [['search-web', lambda x: x]]    
+                        margin: 0
+                        md_bg_color: 'lightgrey'
+                        elevation: 0                    
+
+                    ScrollView:
+                        do_scroll_y: True
+                        effect_cls: 'ScrollEffect'
+                        bar_width: 0
+                        MDBoxLayout:
+                            adaptive_height: True
+                            orientation: 'vertical'
+                            md_bg_color: app.theme_cls.primary_color           
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                size_hint: (None, None)
+                                size: (600, 40)
+                                spacing: 2
+                                MDLabel:
+                                    markup: True
+                                    text: "  [color=#000000]New[/color]"  
+                                    # theme_text_color: "Custom"
+                                    # text_color: app.theme_cls.primary_color       
+
+                                # Widget: 
+                                
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                md_bg_color: app.theme_cls.bg_normal
+                                size_hint_y: None
+                                adaptive_height: True
+                                MDList: #Friends list view panel
+                                    id: notifications_layout
+                                    spacing: 5
+
+                    
+
+            MenuTab:
+                icon: 'menu'
+                md_bg_color: 'lightgrey' 
+                MenuTabScreen:
