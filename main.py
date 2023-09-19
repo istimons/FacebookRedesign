@@ -7,8 +7,6 @@ Fork it & try to see if adding some database between users from firebase can fir
 Developed by lord istimons
 """
 
-import kivy
-
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.properties import ObjectProperty, StringProperty, OptionProperty, DictProperty, BooleanProperty
