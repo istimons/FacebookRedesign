@@ -11,8 +11,6 @@ import kivy
 
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
-from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelOneLine
-from kivymd.uix.scrollview import MDScrollView
 from kivy.properties import ObjectProperty, StringProperty, OptionProperty, DictProperty, BooleanProperty
 from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
