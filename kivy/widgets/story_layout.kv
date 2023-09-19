@@ -1,17 +1,14 @@
 <StoryWithImage>:
     orientation: 'vertical'
-    size: (60, 140)
+    size: dp(60), dp(140)
     size_hint: (None, None)
-    spacing: 5
+    spacing: dp(5)
     width: avatar.width
     
     FitImage:
         id: avatar
         source: root.source
         pos_hint: {'center_x':.5}
-        # fit_mode: "cover"
-        # allow_stretch: True
-        # keep_ration: False
         radius: [9, ]
 
     MDLabel: 
@@ -20,24 +17,21 @@
         theme_text_color: 'Custom'
         text_color: '#000000'
         size_hint_y: None
-        # size_hint_x: None
         halign: 'center'
         font_size: '11sp'
-        # color: [1, 1, 1, 1]
         bold: True
 
 <StoryWithIcon@MDBoxLayout>:
     orientation: 'vertical'
-    size: (90, 180)
+    size: dp(90), dp(180)
     size_hint: (None, None)
-    spacing: 5
+    spacing: dp(5)
     MDIconButton: 
         icon: 'account'
         pos_hint: {'center_x': .5}
         text_color: [1, 1, 1, 1]
-        # md_bg_color: app.theme_cls.accent_color
-        user_font_size: 18
-        size: (45, 70)
+        user_font_size: dp(18)
+        size: dp(45), dp(70)
         size_hint: (None, None)
 
     MDLabel: 
@@ -46,7 +40,6 @@
         theme_text_color: 'Custom'
         text_color: '#000000'
         size_hint_y: None
-        # size_hint_x: None
         halign: 'center'
         font_size: '11sp'
         bold: True

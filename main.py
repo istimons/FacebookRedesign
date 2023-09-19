@@ -13,16 +13,32 @@ from kivy.lang import Builder
 import database.database
 from database.database import profiles
 from kivymd.uix.card import MDCard
+from kivy.clock import Clock
 
 
-Window.size = (375, 680) 
+
+
+
+
+
+from kivy.logger import Logger, LOG_LEVELS
+Logger.setLevel(LOG_LEVELS['debug'])
+
+import os
+file_path = 'assets/videos'
+if os.path.exists(file_path):
+    pass
+esle:print('Not Found!')
+
+
+
 
 
 Builder.load_file('kivy/pages/log_in_screen.kv')
 Builder.load_file('kivy/pages/org_login_screen.kv')
 Builder.load_file('kivy/pages/user_log_in_screen.kv')
 Builder.load_file('kivy/pages/menu_tab_screen.kv')
-Builder.load_file('kivy/pages/message_screen.kv')
+Builder.load_file('kivy/pages/blog_posting_screen.kv')
 Builder.load_file('kivy/widgets/story_layout.kv')
 Builder.load_file('kivy/widgets/avatar.kv')
 Builder.load_file('kivy/widgets/post_content_items.kv')
@@ -68,7 +84,7 @@ class ChatScreen(Screen):
 
 
 class HomeTab(MDFloatLayout, MDTabsBase):
-    ''' A tab that holds all the FaceBook's Home screen content '''
+    ''' A tab that holds all the Facebook's Home screen content '''
 
 
 class FriendsTap(MDFloatLayout, MDTabsBase):
@@ -146,7 +162,6 @@ class VideoPostListItem(MDCard):
     company_video_dir = StringProperty()
 
 
-
 class MessageScreen(Screen):
     '''
     A screen for displaying messages between friends 
@@ -196,9 +211,10 @@ class MainApp(MDApp):
     def build(self):
 
         #setting theme properties
-        self.title = 'FaceBook'
+        self.title = 'Facebook'
         self.theme_cls_style = 'Teal'  # App theme
         self.theme_cls.primary_palette = 'Teal' # Main color palette
+        self.icon = 'assets/images/logo/logo.png'
 
         # other colors are 
         
@@ -211,7 +227,7 @@ class MainApp(MDApp):
         # '800', '900', 'A100', 'A200', 'A400', 'A700']
 
         self.theme_cls.accent_palette = 'Teal' # Second color pallete given the hue value below
-        self.theme_cls_accent_hue = '700'
+        self.theme_cls_accent_hue = '700' 
 
         # adding all the screens to the window manager
         self.wm = WindowManager(transition=FadeTransition())
@@ -233,8 +249,10 @@ class MainApp(MDApp):
         self.chat_list_method()
 
         self.wm.current  = "log_in_screen"
+        # Clock.schedule
 
         return self.wm
+    
 
 
     def switch_screen(self, screen):
@@ -259,6 +277,7 @@ class MainApp(MDApp):
 
         for profile in profiles:
             for message in profile['msg']:
+                
         # for profile in database.database.profiles:
                 self.nofitification_layout = NotificationLayout()
                 self.nofitification_layout.company_name = profile['name']
@@ -310,7 +329,7 @@ class MainApp(MDApp):
 
 
     def company_video_list_builder(self):
-        ''' Custom widget to videos/reels layout '''
+        ''' Custom widget to videos/reels layout'''
 
         for messages in profiles:
             for message in messages['msg']:
@@ -382,7 +401,8 @@ class MainApp(MDApp):
                 self.chatitem.time_stamp = time
                 self.chatitem.is_read = is_read
                 self.chatitem.sender = sender
-                self.root.ids.bloglist.add_widget(self.chatitem)
+            # self.root.ids.bloglist.add_widget(self.chatitem)
 
 if __name__=="__main__":
+
     MainApp().run()

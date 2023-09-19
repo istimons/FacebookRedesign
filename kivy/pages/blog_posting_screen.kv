@@ -1,0 +1,34 @@
+<MessageScreen>:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: 'Blog Posting'
+            left_action_items: [["arrow-left", lambda x: app.switch_screen('main_screen')]]
+
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: dp(10)
+                padding: dp(10)
+                MDTextField:
+                    hint_text: 'Title'
+                    helper_text: 'Enter the title of your blog post'
+                    helper_text_mode: 'on_focus'
+                MDTextField:
+                    hint_text: 'Author'
+                    helper_text: 'Enter your name'
+                    helper_text_mode: 'on_focus'
+                    
+                MDRaisedButton:
+                    text: 'Upload Image'
+                Image:
+                    source: 'assets/images/telcom.png'
+                MDTextField:
+                    hint_text: 'Content'
+                    helper_text: 'Write your blog post here'
+                    helper_text_mode: 'on_focus'
+                    multiline: True
+                MDRaisedButton:
+                    text: 'Publish'
+

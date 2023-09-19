@@ -1,9 +1,8 @@
 <NotificationLayout>:
     adaptive_height: True
     orientation: 'horizontal'
-    size: (360, 45)
-    size_hint: (None, None)
-    spacing: 0
+    size_hint: (1, None)
+    spacing: dp(0)
     padding: [0, 0, 0, 10]
 
     NotificationListItem:
@@ -13,47 +12,18 @@
         notification_content: '{}'.format(root.notification_content)
 
 
-<NotificationWithIcon@MDBoxLayout>:
-    orientation: 'vertical'
-    size: dp(355), dp(75)
-    size_hint: (None, None)
-    spacing: 2
-    # md_bg_color: 'red'
-
-    MDTopAppBar: 
-        height: dp(50)
-        title: "[color=#000000]Friends[/color]"
-        bold: True            
-        text_size: self.size
-        font_size: '15sp'
-        markup: True
-        anchor_title: 'left'
-        right_action_items: [['search-web', lambda x: x]]    
-        margin: 0
-        md_bg_color: 'lightgrey'
-        elevation: 0
-
-        # MDRoundFlatButton:
-        #     text: 'Your Friends'
-        #     line_color: 'lightgray'
-        #     md_bg_color: 'gray'
-        #     text_color: 'black'
-        #     size_hint_x: dp(0.3)        
-   
-
 <NotificationListItem@MDCard>:
-    ripple_behavior: False
+    ripple_behavior: True
     md_bg_color: 0, 0, 0, 0
     elevation: 0
     size_hint_y: None
-    # padding: [10, 0, 10, 0]
-    spacing: 10
+    padding: [10, 0, 20, 0]
+    spacing: dp(10)
     height: chatAvatar.height + 10
     company_name: 'Lorem Ipsum'
     company_image: 'assets/images/1.jpg'
     time_received: 'Lorem Ipsum'
     notification_content: 'Niaje wasee?'
-    # md_bg_color: "red"
 
 
     Avatar:
@@ -62,15 +32,13 @@
         pos_hint: {"center_y": .5}
         radius: [20, ]
         size_hint: (None, None)
-        size: (80, 80)
+        size: dp(80), dp(80)
 
     MDBoxLayout:
         orientation: "vertical"
         padding: [0, 0, 0, 10]
-        spacing: 2     
+        spacing: dp(2)     
         pos_hint: {"center_y": .5}
-        # md_bg_color: 'blue'          
-        # size_hint_y: dp(.0.5)
         adaptive_height: True
 
 
@@ -81,7 +49,7 @@
             size: self.texture_size
             size_hint_y: None
             size_hint_x: None
-            font_size: 15
+            font_size: dp(15)
             color: app.theme_cls.opposite_bg_normal
             bold: True
             
@@ -92,16 +60,14 @@
             size_hint_y: None
             size_hint_x: None
             bold: True
-            font_size: 13
+            font_size: dp(13)
             color: [.5, .5, .5, 1]        
 
                         
     MDIcon:
         icon: 'dots-horizontal'
-        pos_hint: {"center_x": 0.6, "center_y": .8}
         md_bg_color: 0, 0, 0, 0
         size_hint: None, None   
         size: dp(0.01), dp(0.01)
         radius: [12,]
         badge_icon: "numeric-10"
-        pos_hint: {"center_x": .5, "center_y": .5}        

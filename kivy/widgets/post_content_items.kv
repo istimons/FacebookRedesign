@@ -1,21 +1,8 @@
 <PostListItem>:
-
-    # ripple_behavior: True
-    # md_bg_color: 0, 0, 0, 0
-    # elevation: 0
-    # size_hint_y: None
-    # padding: [10, 0, 10, 0]
-    # spacing: 10
-    # height: chatAvatar.height + 10
-    # on_press: app.create_chat(root.profile)
-    # md_bg_color: app.theme_cls.bg_normal
-    
     orientation: 'vertical'
     size_hint: (1, 1)
     adaptive_height: True
-
-    ######################################################################  
-    
+   
 
     MDBoxLayout:
         size_hint_y: None
@@ -28,20 +15,16 @@
         MDLabel:
             size_hint: (None, None)
             pos_hint: {'center_y':.5}
-            size: 0.01, 30
-
-    ###########################Bridge####################################
+            size: dp(0.01), dp(30)
 
         Avatar:
             source: root.company_avatar
             pos_hint: {"center_y": .5}
             radius: [30, ]
         MDBoxLayout:
-            # md_bg_color: 1, 0, 1, 1
             orientation: "vertical"
-            padding: 0, 0, 0, "20dp"   # for text alignment (spacing)
+            padding: 0, 0, 0, "20dp" 
             spacing: dp(2)
-            # md_bg_color: 'red'
             Label:
                 markup: True
                 text: '[color=#ff0000ff]{} . Follow[/color]'.format(root.company_name)
@@ -54,30 +37,21 @@
                 bold: True
 
             MDLabel:
-                # id: 'company_info'
                 text: 'Suggested for you. {}'.format(root.timestamp)
                 height: self.texture_size[1]
                 theme_text_color: 'Custom'
                 size_hint_y: None
-                # size_hint_x: None
                 bold: True
                 font_size: '12sp'
                 color: [.5, .5, .5, 1] 
                 shorten: True
                 markup: True
                 shorten_from: 'right'  
-                # if root.is_read != 'new' else app.theme_cls.primary_color        
                 icon: 'earth'  
-
-
-    ###########################Bridge####################################
-
 
         MDBoxLayout:
             size_hint_x: dp(1)
-            # spacing: 3
-            # md_bg_color: 'red'
-            padding: 0, 0, 0, "26dp"   # for text alignment (spacing)     
+            padding: 0, 0, 0, "26dp"   
             
 
             Widget:
@@ -90,28 +64,22 @@
                 icon: 'dots-horizontal'
                 size_hint: (None, None)
                 pos_hint: {'center_y':.5, "center_x": .7}
-                size: 1, 10
+                size: dp(1), dp(10)
                 padding: 0
             MDIconButton:
                 icon: 'close'
                 size_hint: (None, None)
                 pos_hint: {'center_y':.5, "center_x": .9}
-                size: 1, 10
+                size: dp(1), dp(10)
                 padding: 0
 
-
-    ################
 
     MDCard:
         ripple_behavior: True
         md_bg_color: 0, 0, 0, 0
-        # elevation: 0.5
         size_hint_y: None
-        size: (1, 350)
-        # padding: [10, 0, 10, 0]
-        spacing: 2
-        # height: avatar.height + 10
-        # on_press: app.create_chat(root.profile)
+        size: dp(1), dp(350)
+        spacing: dp(2)
 
         FitImage:
             source: root.company_avatar

@@ -2,8 +2,7 @@
     orientation: "vertical"
     size_hint_y: None
     height: "140dp"
-    padding: "4dp"
-    # radius: [12, ]
+    padding: "10dp"
     elevation: 0.5
     line_color: 'lightgray'
     md_bg_color: 'lightgray'
@@ -12,10 +11,13 @@
         source: root.image_to_post
         allow_stretch: True
         size_hint_y: None
-        # height: root.height - dp(110)
+        # padding: "15dp"
+        padding: ["0dp", "10dp", "0dp", "10dp"]
 
     MDLabel:
         text: root.price
+        padding: ["10dp", "30dp", "10dp", "30dp"]
+        spacing: dp(10)
         markup: True
         bold: True
         halign: 'left'

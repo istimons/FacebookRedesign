@@ -1,38 +1,23 @@
 <PostsBottomContent@MDBoxLayout>:
     orientation: 'vertical'
     size_hint_y: None    
-    # padding: [0, 0, 0, 10]
-    # md_bg_color: 'grey'
     
     MDCard:
-        # id: PostsBottomContent
-        # radius: [18, ]
         md_bg_color: 'lightgrey'
-        # padding: [10, 0, 10, 0]
-        # size_hint_y: None
-        # size_hint_x: None
-        # width: 220
-        # height: 40
         size_hint: (1, 1)
-        pos_hint: {'center_x': .5}
-        # text_size: '1sp'
-        # font_size: '9sp'        
+        pos_hint: {'center_x': .5}      
 
                
         NavIcon:
             text_color: "red"
-            # on_press: app.change_screen('message')
             icon: 'heart'
-            # size_hint_x: 0.3
 
         MDLabel:
-            # text: '{}K'.format(root.post_likes)
             text: '9K'
             size_hint_x: 0.3
             font_size: '9sp'             
 
         MDLabel:
-            # text: '{}K comments . {} shares'.format(root.post_comments, root.post_shares)
             text: '7K comments . 45 shares'
             size_hint_x: 0.2
             font_size: '9sp'
@@ -42,43 +27,28 @@
         md_bg_color: 'grey'
         
     MDCard:
-        # id: PostsBottomContent
-        # radius: [18, ]
         md_bg_color: 'lightgrey'
-        # padding: [10, 0, 10, 0]
-        # size_hint_y: None
-        # size_hint_x: None
-        # width: 220
-        # height: 40
         size_hint: (1, 1)
-        pos_hint: {'center_x': .5}
-        # text_size: '1sp'
-        # font_size: '9sp'        
+        pos_hint: {'center_x': .5}       
 
                
         NavIcon:
             text_color: "red"
-            # on_press: app.change_screen('message')
             icon: 'thumb-up'
             text: 'Like'
             theme_text_color: 'Custom'            
             text_color: 'black'
             font_size: '9sp'
-            # size_hint_x: 0.3
             
 
         NavIcon:
             text_color: "black"
-            # on_press: app.change_screen('message')
             icon: 'comment'
-            # size_hint_x: 0.3
             text: 'Comment'
 
         NavIcon:
             text_color: "black"
-            # on_press: app.change_screen('message')
             icon: 'share'
-            # size_hint_x: 0.3
             text: 'Share'
 
 
@@ -86,9 +56,9 @@
 <NavIcon@MDIconButton>:
     pos_hint: {'center_y': .5}
     theme_text_color: 'Custom'
-    size_hint_x: .1
-    user_font_size: 2
-    size: 10, 15
+    size_hint_x: dp(.1)
+    user_font_size: dp(2)
+    size: dp(10), dp(15)
 
         
 
