@@ -1,5 +1,5 @@
 """ 
-This is a Facebook redesign ceoncept using KivyMD.
+This is a Facebook redesign cencept using KivyMD & python.
 
 Fork it & try to see if adding some database between users from firebase can fire some Notifications, Good Luck!
 
