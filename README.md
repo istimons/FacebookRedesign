@@ -5,7 +5,7 @@ Redesigned Facebook with a new Look &amp; Feel using KivyMD &amp; Python
 
 # FacebookRedesign
 
-![Project Preview](assets/appScreenshots/homeScreen__01.png)
+![Project Preview](https://github.com/istimons/FacebookRedesign/blob/main/assets/appScreenshots/homeScreen__01.png)
 
 Welcome to FacebookRedesign, a project that reimagines the Facebook UI using KivyMD, Kivy, and Python. I invite developers like you to contribute and help make this project even better!
 
