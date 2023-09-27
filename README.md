@@ -9,6 +9,8 @@ Welcome to FacebookRedesign, a project that reimagines the Facebook UI using Kiv
 
 ![Project Preview](https://github.com/istimons/FacebookRedesign/blob/main/assets/appScreenshots/loginScreen__01.png)
 
+![Project Preview](https://github.com/istimons/FacebookRedesign/blob/main/assets/appScreenshots/create_profile_screen__01.png)
+
 ![Project Preview](https://github.com/istimons/FacebookRedesign/blob/main/assets/appScreenshots/homeScreen__01.png)
 
 ![Project Preview](https://github.com/istimons/FacebookRedesign/blob/main/assets/appScreenshots/friendsScreen__01.png)
