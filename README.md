@@ -2,7 +2,7 @@
 Redesigned Facebook with a new Look &amp; Feel using KivyMD &amp; Python
 
 
-```markdown
+
 # FacebookRedesign
 
 ![Project Preview](assets/appScreenshots/homeScreen__01.png)
@@ -93,4 +93,4 @@ If you have any questions or suggestions, feel free to reach out to us.
 We look forward to your contributions and hope you enjoy working on this project!
 
 Happy coding! 🚀
-```
+
