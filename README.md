@@ -106,7 +106,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or suggestions, feel free to reach out to us.
 
 - Email: istimons@gmail.com
-- Twitter: [@YourTwitterHandle](https://twitter.com/Lord_Njuhigu?s=08)
+- Twitter: [@Lord_Njuhigu](https://twitter.com/Lord_Njuhigu?s=08)
 
 We look forward to your contributions and hope you enjoy working on this project!
 
